@@ -1,5 +1,11 @@
+async function showWeather(){
+
 const weatherAPI =
     "http://api.weatherapi.com/v1/current.json?key=7e71b6f8993649078d1145132220906&aqi=no";
+const options = {
+    method: 'GET',
+};
+    try { 
     const keyword = document.querySelector("#inputSearch");
     const btnSubmit = document.querySelector("#btnSubmit");
     const container = document.getElementById("details");
@@ -29,4 +35,21 @@ const weatherAPI =
         <p>Wind Speed : ${data.current.wind_kph}km/h</p>
         <p>Last Update : ${data.current.last_updated}</p>`;   
     }   
+    // const response = await fetch(weatherAPI, options);
+	// const result = await response.json();
+	// console.log(result);
 
+    // city.innerHTML = "City : " + city_name
+
+    // humidity.innerHTML = "Humidity : " + result.humidity + " %"
+    // temperature.innerHTML = "Temperature : " + result.temp + " C"
+    // wind.innerHTML = "Wind Speed : " + result.wind_speed + " km/h"
+	// min_temp.innerHTML = "Min Temperature: " + result.min_temp + " C" 
+	// max_temp.innerHTML = "Max Temperature: " + result.max_temp + " C"
+
+   
+    } catch (error) {
+        console.error(error);
+    }
+    
+}
